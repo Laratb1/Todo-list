@@ -6,13 +6,8 @@
 }
 
 body{
-  background: linear-gradient(
-    90deg,
-    rgba(48, 16, 255, 1) 0%
-    rgba(100, 115, 255, 1) 100%
-  );
-  /* height: 100vh;
-  background: #700548; */
+  height: 100vh;
+  background: #700548;
 }
 
 .App {
@@ -31,7 +26,7 @@ body{
 h1 {
   margin: 32px 0;
   color: #fff;
-  font-size: 24px;
+  font-size: 42px;
 }
 
 .complete {
@@ -45,7 +40,7 @@ h1 {
 
 .todo-input {
   padding: 14px 32px 14px 16px;
-  border-radius: 4px 0 0 4px;
+  border-radius: 4px 4px 4px 4px;
   border: 2px solid #5d0cff;
   outline: none;
   width: 320px;
@@ -58,19 +53,19 @@ h1 {
 }
 
 .todo-button {
-  padding: 16px;
+  padding: 2px;
+  margin: 10px;
   border: none;
-  border-radius: 0 4px 4px 0;
+  border-radius: 4px 4px 4px 4px;
   cursor: pointer;
   outline: none;
   background: #700548;
+  /* background: #fff; */
   /* background: linear-gradient(
     90deg,
     rgba(93, 12, 255, 1) 0%,
     rgba(155, 0, 250, 1) 100%
   ); */
-  color: #fff;
-  text-transform: capitalize;
 }
 
 .todo-input.edit {
@@ -137,6 +132,14 @@ h1 {
   align-items: center;
   font-size: 24px;
   cursor: pointer;
+}
+
+.add-icon {
+  color: #fff;
+}
+
+.update-icon {
+  color: #fff;
 }
 
 .delete-icon {

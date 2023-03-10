@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { GrAddCircle } from 'react-icons/gr';
+import { GrAddCircle, GrUpdate } from 'react-icons/gr';
 
 function TodoForm(props) {
     const [input, setInput] = useState(props.edit ? props.edit.value : '');
@@ -38,7 +38,7 @@ function TodoForm(props) {
                 className='todo-input edit'
               />
               <button onClick={handleSubmit} className='todo-button edit'>
-                Update
+                <GrUpdate size={20} className='update-icon' />
               </button>
             </>
           ) : (
@@ -52,7 +52,7 @@ function TodoForm(props) {
                 ref={inputRef}
               />
               <button onClick={handleSubmit} className='todo-button'>
-                <GrAddCircle size={25} />
+                <GrAddCircle size="30" className='add-icon'/>
               </button>
             </>
           )}
