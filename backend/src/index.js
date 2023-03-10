@@ -13,6 +13,10 @@ const DB =  process.env.DB;
 mongoose.connect(DB ,{
     useNewUrlParser:true,
     useUnifiedTopology:true,
+}).then(() => {
+    console.log("Connect!");
+}).catch(() => {
+    console(error);
 })
 
 app.use(express.json()); 

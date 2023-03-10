@@ -3,9 +3,15 @@ const Task = require('../modules/Taks.js');
 module.exports = {
     async store(req,res){
         const { task, done } = req.body;
-        const newTask = await Task.store({ task, done });
+        try{
+            const newTask = await Task.create({ task, done });
+            res.status(200).json(newTask);
+        }catch (error){
+            console.error(error);
+            return res.status(500);
+        }
 
-        return res.json(newTask);
+        return res.status(200).json(newTask);
     },
 
     async index(req, res) {
