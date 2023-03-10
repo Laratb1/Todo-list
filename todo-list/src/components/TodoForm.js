@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { GrAddCircle } from 'react-icons/gr';
 
 function TodoForm(props) {
-    const [input, setInput] = useState('');
+    const [input, setInput] = useState(props.edit ? props.edit.value : '');
 
     const inputRef = useRef(null);
 
@@ -26,21 +26,38 @@ function TodoForm(props) {
     };
 
     return (
-        <form className="todo-form">
-            <input 
-                type="text" 
-                placeholder="New task.." 
-                value={input} 
-                name="text" 
-                className="todo-input"
+        <form onSubmit={handleSubmit} className='todo-form'>
+          {props.edit ? (
+            <>
+              <input
+                placeholder='Update your item'
+                value={input}
                 onChange={handleChange}
+                name='text'
                 ref={inputRef}
-            />
-            <button onClick={handleSubmit} className='todo-button'><GrAddCircle size={25}/> </button>
+                className='todo-input edit'
+              />
+              <button onClick={handleSubmit} className='todo-button edit'>
+                Update
+              </button>
+            </>
+          ) : (
+            <>
+              <input
+                placeholder='New task...'
+                value={input}
+                onChange={handleChange}
+                name='text'
+                className='todo-input'
+                ref={inputRef}
+              />
+              <button onClick={handleSubmit} className='todo-button'>
+                <GrAddCircle size={25} />
+              </button>
+            </>
+          )}
         </form>
-            
-        
-    )
+      );
 }
 
 export default TodoForm

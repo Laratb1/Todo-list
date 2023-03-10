@@ -5,14 +5,14 @@ import { TiEdit } from 'react-icons/ti';
 import TodoForm from './TodoForm'
 import TodoList from './TodoList'
 
-function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
+const Todo = ({ todos, completeTodo, removeTodo, updateTodos }) => {
     const [edit, setEdit] = useState({
         id: null,
         value: ''
     });
 
     const submitUpdate = value => {
-        updateTodo(edit.id, value)
+        updateTodos(edit.id, value)
         setEdit({
             id:null,
             value: ''
@@ -41,7 +41,7 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
                 />
             </div>
         </div>
-    ))
-} 
+    ));
+}; 
 
-export default Todo
+export default Todo;

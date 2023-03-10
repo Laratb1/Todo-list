@@ -10,7 +10,7 @@ function TodoList() {
             return;
         }
 
-        const newTodos = [todo, ...todos]
+        const newTodos = [todo, ...todos];
 
         setTodos(newTodos);
     };
@@ -40,12 +40,17 @@ function TodoList() {
     }
 
     return (
-    <div>
+    <>
         <h1>Todo list</h1>
         <TodoForm onSubmit={addTodo} />
-        <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} updateTodos={updateTodos} />
-    </div>
-  )
+        <Todo 
+            todos={todos} 
+            completeTodo={completeTodo} 
+            removeTodo={removeTodo} 
+            updateTodos={updateTodos} 
+        />
+    </>
+  );
 }
 
-export default TodoList
+export default TodoList;
