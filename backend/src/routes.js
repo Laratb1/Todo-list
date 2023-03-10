@@ -9,7 +9,7 @@ const dotenv =  require('dotenv');
 dotenv.config();
 
 routes.post('/new/task', TaskController.store);
-//routes.get('/tasks', TaskController.index);
-routes.delete('/delete/task/:_id', TaskController.delete);
+// routes.get('/tasks', TaskController.index);
+// routes.delete('/delete/task/:_id', TaskController.delete);
 
 module.exports = routes;

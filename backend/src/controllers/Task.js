@@ -3,10 +3,22 @@ const Task = require('../modules/Taks.js');
 module.exports = {
     async store(req,res){
         const { task, done } = req.body;
-        const newTask = await Task.create({ task, done });
+        const newTask = await Task.store({ task, done });
 
-        return res.status(200).jason(newTask);
+        return res.json(newTask);
     },
+
+    async index(req, res) {
+        let content;
+    
+        try {
+          content = await Task.find();
+    
+          return res.json(content).status(200);
+        } catch (err) {
+          throw new Error("Cat't get content!");
+        }
+      },
 
     async delete(req, res, next){
         let content;
